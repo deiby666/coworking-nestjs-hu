@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, Sse } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuariosModule } from './usuarios/usuarios.module';
@@ -27,10 +27,9 @@ import { Reserva } from './reservas/entities/reserva.entity';
       database: process.env.POSTGRES_DATABASE,
       autoLoadEntities: true,
       synchronize: false,
-      ssl: {
-        rejectUnauthorized: false,
+      extra: {
+        ssl: true
       },
-      entities: [__dirname + '/../**/*.entity{.ts,.js}', Sala, Espacio, Sesion, Usuario, Reserva],
     }),
     UsuariosModule,
     SalasModule,
