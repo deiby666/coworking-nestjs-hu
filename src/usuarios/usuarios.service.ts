@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -23,6 +23,10 @@ export class UsuariosService {
                 id_usuario: usuarioId
             }
         });
+        if (!usuario) {
+            throw new NotFoundException(`usuario con ID ${usuarioId} no encontrado`);
+        }
+          
         return usuario
     }
 }
