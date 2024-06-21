@@ -46,59 +46,79 @@ Sigue estos pasos para instalar el proyecto en tu máquina local.
 
 ### Requisitos previos
 
+```bash
 - Node.js (versión 14 o superior)
 - npm
+```
 
 ### Clonar el repositorio
 
 ```bash
 git clone https://github.com/deiby666/coworking-nestjs-hu.git
 cd coworking-nestjs-hu
+```
 
 Instalar dependencias
 
+```bash
 npm install
+```
 
-Configuración
+### Configuración
+
 Crea un archivo .env en la raíz del proyecto y añade las siguientes variables:
 
+```bash
 POSTGRES_USER=default
 POSTGRES_HOST=ep-black-mud-a448djts-pooler.us-east-1.aws.neon.tech
 POSTGRES_PASSWORD=Wrktng9qR3OM
 POSTGRES_DATABASE=verceldb
 POSTGRES_PORT=5432
+```
 
-Uso
+### Uso
 Instrucciones para ejecutar la aplicación.
 
-Desarrollo
+### Desarrollo
 
+```bash
 npm run start:dev
+```
 
+```bash
 npm run build
 npm run start:prod
+```
 
 
 El proyecto estará corriendo en http://localhost:3000.
 
-Tests
+
+### Tests
 Instrucciones para ejecutar los tests.
 
-Unit tests
+### Unit tests
 
+```bash
 npm run test
+```
 
-End-to-end tests
+### End-to-end tests
 
+```bash
 npm run test:e2e
+```
 
-Test coverage
+### Test coverage
 
+```bash
 npm run test:cov
+```
 
-Estructura del Proyecto
+### Estructura del Proyecto
 El proyecto tiene la siguiente estructura:
 
+```bash
 src/
 |-- app.module.ts
 |-- main.ts
@@ -152,7 +172,7 @@ src/
     |   |-- usuarios.controller.ts
     |-- servicios/
         |-- usuarios.service.ts
-
+```
 
 app.module.ts: Módulo principal de la aplicación.
 main.ts: Punto de entrada de la aplicación.
