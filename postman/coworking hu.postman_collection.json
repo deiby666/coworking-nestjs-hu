@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "32294aba-82e4-443e-af85-243a17bc9112",
+		"name": "coworking hu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33485941"
+	},
+	"item": [
+		{
+			"name": "availableWorkspaces",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/espacios/available/sesion/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"espacios",
+						"available",
+						"sesion",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ocuppiedWorkspaces",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/espacios/ocuppied/sesion/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"espacios",
+						"ocuppied",
+						"sesion",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BusiestSesions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sesion/busiest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sesion",
+						"busiest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mostAvailable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sesion/mostAvailable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sesion",
+						"mostAvailable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuarioEspacios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/usuarios/usuario/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios",
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sesionesEspacios",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
