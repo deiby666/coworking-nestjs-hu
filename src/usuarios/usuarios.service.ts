@@ -1,26 +1,28 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Usuario } from './entities/usuario.entity';
+import { Repository } from 'typeorm';
+import { Reserva } from 'src/reservas/entities/reserva.entity';
 
 @Injectable()
 export class UsuariosService {
-  create(createUsuarioDto: CreateUsuarioDto) {
-    return 'This action adds a new usuario';
-  }
+    constructor(
+        @InjectRepository(Usuario)
+        private readonly usuarioRepository: Repository<Usuario>,
 
-  findAll() {
-    return `This action returns all usuarios`;
-  }
+        @InjectRepository(Reserva)
+        private reservaRepository: Repository<Reserva>,
+    ){}
 
-  findOne(id: number) {
-    return `This action returns a #${id} usuario`;
-  }
-
-  update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return `This action updates a #${id} usuario`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} usuario`;
-  }
+    async espacioAsignado(usuarioId: number): Promise<Usuario | undefined> {
+        const usuario = await this.usuarioRepository.findOne({ 
+            relations: ['reservas.espacio'], 
+            where: {
+                id_usuario: usuarioId
+            }
+        });
+        return usuario
+    }
 }

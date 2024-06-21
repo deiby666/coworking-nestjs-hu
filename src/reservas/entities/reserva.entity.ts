@@ -22,7 +22,7 @@ export class Reserva {
 
 
     @Column({type: 'timestamp'})
-    fehcha_reserva: Date;
+    fecha_reserva: Date;
 
     @Column()
     status: string;

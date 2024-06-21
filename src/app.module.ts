@@ -6,11 +6,7 @@ import { SalasModule } from './salas/salas.module';
 import { EspaciosModule } from './espacios/espacios.module';
 import { ReservasModule } from './reservas/reservas.module';
 import { SesionModule } from './sesion/sesion.module';
-import { Sala } from './salas/entities/sala.entity';
-import { Espacio } from './espacios/entities/espacio.entity';
-import { Sesion } from './sesion/entities/sesion.entity';
-import { Usuario } from './usuarios/entities/usuario.entity';
-import { Reserva } from './reservas/entities/reserva.entity';
+
 
 @Module({
   imports: [
