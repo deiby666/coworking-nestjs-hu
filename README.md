@@ -22,51 +22,141 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Coworking NestJS HU
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This project is an API built with NestJS to manage the reservation of workspaces in a coworking space. Users can reserve workspaces for a specific session, facilitating the management of space occupancy and improving user experience.
 
-## Installation
+## Índice
+
+1. [Descripción](#descripción)
+2. [Instalación](#instalación)
+3. [Configuración](#configuración)
+4. [Uso](#uso)
+5. [Tests](#tests)
+6. [Estructura del Proyecto](#estructura-del-proyecto)
+7. [Contribución](#contribución)
+
+## Descripción
+
+Esta API está construida con NestJS para gestionar la reserva de espacios de trabajo en un coworking. Los usuarios pueden reservar espacios para una sesión específica, facilitando la gestión de la ocupación del espacio y mejorando la experiencia del usuario.
+
+## Instalación
+
+Sigue estos pasos para instalar el proyecto en tu máquina local.
+
+### Requisitos previos
+
+- Node.js (versión 14 o superior)
+- npm
+
+### Clonar el repositorio
 
 ```bash
-$ npm install
-```
+git clone https://github.com/deiby666/coworking-nestjs-hu.git
+cd coworking-nestjs-hu
 
-## Running the app
+Instalar dependencias
 
-```bash
-# development
-$ npm run start
+npm install
 
-# watch mode
-$ npm run start:dev
+Configuración
+Crea un archivo .env en la raíz del proyecto y añade las siguientes variables:
 
-# production mode
-$ npm run start:prod
-```
+POSTGRES_USER=default
+POSTGRES_HOST=ep-black-mud-a448djts-pooler.us-east-1.aws.neon.tech
+POSTGRES_PASSWORD=Wrktng9qR3OM
+POSTGRES_DATABASE=verceldb
+POSTGRES_PORT=5432
 
-## Test
+Uso
+Instrucciones para ejecutar la aplicación.
 
-```bash
-# unit tests
-$ npm run test
+Desarrollo
 
-# e2e tests
-$ npm run test:e2e
+npm run start:dev
 
-# test coverage
-$ npm run test:cov
-```
+npm run build
+npm run start:prod
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+El proyecto estará corriendo en http://localhost:3000.
 
-## Stay in touch
+Tests
+Instrucciones para ejecutar los tests.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Unit tests
+
+npm run test
+
+End-to-end tests
+
+npm run test:e2e
+
+Test coverage
+
+npm run test:cov
+
+Estructura del Proyecto
+El proyecto tiene la siguiente estructura:
+
+src/
+|-- app.module.ts
+|-- main.ts
+|-- salas/
+|   |-- entidades/
+|   |   |-- sala.entity.ts
+|   |-- dtos/
+|   |   |-- create-sala.dto.ts
+|   |   |-- update-sala.dto.ts
+|   |-- controladores/
+|   |   |-- salas.controller.ts
+|   |-- servicios/
+|       |-- salas.service.ts
+|-- espacios/
+|   |-- entidades/
+|   |   |-- espacio.entity.ts
+|   |-- dtos/
+|   |   |-- create-espacio.dto.ts
+|   |   |-- update-espacio.dto.ts
+|   |-- controladores/
+|   |   |-- espacios.controller.ts
+|   |-- servicios/
+|       |-- espacios.service.ts
+|-- reservas/
+|   |-- entidades/
+|   |   |-- reserva.entity.ts
+|   |-- dtos/
+|   |   |-- create-reserva.dto.ts
+|   |   |-- update-reserva.dto.ts
+|   |-- controladores/
+|   |   |-- reservas.controller.ts
+|   |-- servicios/
+|       |-- reservas.service.ts
+|-- sesion/
+|   |-- entidades/
+|   |   |-- sesion.entity.ts
+|   |-- dtos/
+|   |   |-- create-sesion.dto.ts
+|   |   |-- update-sesion.dto.ts
+|   |-- controladores/
+|   |   |-- sesion.controller.ts
+|   |-- servicios/
+|       |-- sesion.service.ts
+|-- usuarios/
+    |-- entidades/
+    |   |-- usuario.entity.ts
+    |-- dtos/
+    |   |-- create-usuario.dto.ts
+    |   |-- update-usuario.dto.ts
+    |-- controladores/
+    |   |-- usuarios.controller.ts
+    |-- servicios/
+        |-- usuarios.service.ts
+
+
+app.module.ts: Módulo principal de la aplicación.
+main.ts: Punto de entrada de la aplicación.
+salas, espacios, reservas, sesion, usuarios: Cada carpeta contiene sus respectivas entidades, DTOs, controladores y servicios.
 
 ## License
 
