@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateSesionDto } from './dto/create-sesion.dto';
 import { UpdateSesionDto } from './dto/update-sesion.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -57,6 +57,11 @@ return sesiones;
             id_sesion: sesionId
         }
     });
+
+    if (!usuario) {
+      throw new NotFoundException(`sesion con id ${sesionId} no encontrada`);
+    }
+
     return usuario
 }
   

@@ -1,1 +1,3 @@
-export class CreateEspacioDto {}
+export class CreateEspacioDto {
+
+}
